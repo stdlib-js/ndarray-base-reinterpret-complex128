@@ -1,5 +1,28 @@
-"use strict";var s=function(e,r){return function(){return r||e((r={exports:{}}).exports,r),r.exports}};var u=s(function(m,i){
-var v=require('@stdlib/strided-base-reinterpret-complex128/dist'),n=require('@stdlib/ndarray-base-ctor/dist'),p=require('@stdlib/ndarray-base-shape/dist'),q=require('@stdlib/ndarray-base-strides/dist'),g=require('@stdlib/ndarray-base-offset/dist'),d=require('@stdlib/ndarray-base-order/dist'),f=require('@stdlib/ndarray-base-data-buffer/dist'),h=require('@stdlib/blas-base-gscal/dist');function l(e){var r,t,a;return t=p(e,!0),r=q(e,!0),a=t.length,h(a,2,r,1),t.push(2),a===0?r[0]=1:r.push(1),n("float64",v(f(e),0),t,r,g(e)*2,d(e))}i.exports=l
-});var o=u();module.exports=o;
 /** @license Apache-2.0 */
-//# sourceMappingURL=index.js.map
+
+'use strict';
+
+/**
+* Reinterpret a double-precision complex floating-point ndarray as a real-valued double-precision floating-point ndarray containing interleaved real and imaginary components.
+*
+* @module @stdlib/ndarray-base-reinterpret-complex128
+*
+* @example
+* var ones = require( '@stdlib/ndarray-base-ones' );
+* var reinterpretComplex128 = require( '@stdlib/ndarray-base-reinterpret-complex128' );
+*
+* var x = ones( 'complex128', [ 2, 2 ], 'row-major' );
+* // returns <ndarray>[ [ <Complex128>[ 1.0, 0.0 ], <Complex128>[ 1.0, 0.0 ] ], [ <Complex128>[ 1.0, 0.0 ], <Complex128>[ 1.0, 0.0 ] ] ]
+*
+* var out = reinterpretComplex128( x );
+* // returns <ndarray>[ [ [ 1.0, 0.0 ], [ 1.0, 0.0 ] ], [ [ 1.0, 0.0 ], [ 1.0, 0.0 ] ] ]
+*/
+
+// MODULES //
+
+var main = require( './main.js' );
+
+
+// EXPORTS //
+
+module.exports = main;
